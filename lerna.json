@@ -1,0 +1,6 @@
+{
+  "packages": ["ui", "js-app"],
+  "useWorkspaces": true,
+  "npmClient": "yarn",
+  "version": "0.0.0"
+}

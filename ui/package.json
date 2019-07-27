@@ -1,0 +1,12 @@
+{
+  "name": "@mono/ui",
+  "version": "1.0.0",
+  "main": "build/index.ts",
+  "typings": "build/index.d.ts",
+  "scripts": {
+    "prepare": "tsc -p tsconfig.build.json",
+    "start": "tsc -p tsconfig.build.json -w",
+    "test": "react-scripts-ts test --env-jsdom"
+  },
+  "license": "MIT"
+}
