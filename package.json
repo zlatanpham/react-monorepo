@@ -1,5 +1,5 @@
 {
-  "name": "cra-monorepo",
+  "name": "react-monorepo",
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
@@ -14,5 +14,9 @@
   "devDependencies": {
     "lerna": "^3.14.1",
     "rimraf": "^2.6.3"
-  }
+  },
+  "workspaces": [
+    "ui",
+    "cra"
+  ]
 }

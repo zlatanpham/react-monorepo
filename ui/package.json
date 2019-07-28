@@ -1,12 +1,24 @@
 {
   "name": "@mono/ui",
   "version": "1.0.0",
-  "main": "build/index.ts",
+  "main": "build/index.js",
   "typings": "build/index.d.ts",
   "scripts": {
     "prepare": "tsc -p tsconfig.build.json",
     "start": "tsc -p tsconfig.build.json -w",
     "test": "react-scripts-ts test --env-jsdom"
   },
-  "license": "MIT"
+  "peerDependencies": {
+    "react": ">=15",
+    "react-dom": ">=15"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "^3.5.3"
+  }
 }

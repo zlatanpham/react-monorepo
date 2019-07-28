@@ -1,6 +1,7 @@
 {
-  "packages": ["ui", "js-app"],
+  "packages": ["ui", "cra"],
   "useWorkspaces": true,
   "npmClient": "yarn",
+  "lerna": "3.14.1",
   "version": "0.0.0"
 }
