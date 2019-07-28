@@ -5,8 +5,7 @@
   "typings": "build/index.d.ts",
   "scripts": {
     "prepare": "tsc -p tsconfig.build.json",
-    "start": "tsc -p tsconfig.build.json -w",
-    "test": "react-scripts-ts test --env-jsdom"
+    "start": "tsc -p tsconfig.build.json -w"
   },
   "peerDependencies": {
     "react": ">=15",

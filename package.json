@@ -17,6 +17,7 @@
   },
   "workspaces": [
     "ui",
-    "cra"
+    "cra",
+    "cra-ts"
   ]
 }
