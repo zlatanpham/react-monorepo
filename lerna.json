@@ -1,6 +1,5 @@
 {
   "packages": ["ui", "cra", "cra-ts"],
-  "useWorkspaces": true,
   "npmClient": "yarn",
   "lerna": "3.14.1",
   "version": "0.0.0"

@@ -9,15 +9,19 @@
     "bootstrap": "lerna bootstrap",
     "start": "lerna run --parallel start",
     "prepare": "rimraf ui/build && lerna run prepare",
-    "build": "npm run prepare && lerna run --parallel build"
+    "build": "npm run prepare && lerna run --parallel build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
+    "babel-loader": "^8.0.6",
     "lerna": "^3.14.1",
     "rimraf": "^2.6.3"
   },
-  "workspaces": [
-    "ui",
-    "cra",
-    "cra-ts"
-  ]
+  "dependencies": {}
 }
