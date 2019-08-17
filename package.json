@@ -10,23 +10,20 @@
     "start": "lerna run --parallel start",
     "prepare": "rimraf ui/build && lerna run prepare",
     "build": "npm run prepare && lerna run --parallel build",
-    "storybook": "start-storybook -p 6006",
+    "start:cra-ts": "npm run prepare && lerna run --parallel start --scope=@mono/ui --scope=@mono/cra-ts",
+    "storybook": "lerna run storybook --scope=@mono/storybook",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@storybook/addon-actions": "^5.1.10",
-    "@storybook/addon-info": "^5.1.10",
-    "@storybook/addon-links": "^5.1.10",
-    "@storybook/addons": "^5.1.10",
-    "@storybook/react": "^5.1.10",
-    "@types/storybook__react": "^4.0.2",
-    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
-    "lerna": "^3.14.1",
-    "react-docgen-typescript-loader": "^3.1.1",
-    "rimraf": "^2.6.3",
-    "typescript": "^3.5.3"
+    "lerna": "^3.16.4",
+    "rimraf": "^2.6.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "workspaces": [
+    "./cra-ts",
+    "./ui",
+    "./storybook",
+    "./config"
+  ]
 }
