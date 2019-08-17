@@ -8,7 +8,7 @@
     "strict": true,
     "module": "esnext",
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node"
