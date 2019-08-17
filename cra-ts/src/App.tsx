@@ -1,17 +1,15 @@
 import React from 'react';
-import tw from 'tailwind.macro';
-import styled from 'styled-components';
-import { Button } from '@mono/ui';
+import Routes from './Routes';
+import { Provider } from 'react-redux';
+import configureStore from 'configureStore';
 
-const Container = styled.div`
-  ${tw`bg-white min-h-screen flex items-center justify-center`}
-`;
+const store = configureStore();
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <Container>
-      <Button className="test-2">My Button</Button>
-    </Container>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   );
 };
 

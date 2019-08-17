@@ -1,0 +1,7 @@
+enum ActionTypes {
+  FETCH_POSTS = 'FETCH_POSTS',
+  FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS',
+  FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE',
+}
+
+export default ActionTypes;
