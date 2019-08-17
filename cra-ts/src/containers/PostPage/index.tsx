@@ -15,6 +15,8 @@ import { Dispatch } from 'redux';
 import { PostState } from './types';
 import { ApplicationRootState } from 'types/app';
 import { RouteComponentProps } from '@reach/router';
+import Button from 'components/Button';
+import { Line } from '@mono/ui';
 
 const mapStateToProps = createStructuredSelector<
   ApplicationRootState,
@@ -66,6 +68,10 @@ const PostPage = (props: RouteComponentProps<{ id: string }>) => {
       </p>
       <p>
         <b>Body:</b> {post.body}
+      </p>
+      <p>
+        <Line thickness="base"></Line>
+        <Button>3utton</Button>
       </p>
     </div>
   );

@@ -32,23 +32,15 @@ module.exports = override(
   //     'react-dom': '@hot-loader/react-dom',
   //   },
   // }),
+  addBabelPlugins('@babel/plugin-proposal-optional-chaining'),
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: themeVars,
   }),
-  addBabelPlugins('styled-components', [
-    'tailwind-components',
-    {
-      config: path.join(__dirname, 'tailwind.config.js'),
-      format: 'auto',
-    },
-    'react-hot-loader/babel',
-  ]),
-  useEslintRc(),
   // allow babel config from cra to transform outsite source
   babelInclude([path.resolve('src'), path.resolve('../ui')]),
   addPostcssPlugins([
-    require('tailwindcss')(path.join(__dirname, 'tailwind.config.js')),
+    require('tailwindcss')('./src/tailwind.config.js'),
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
   ]),
   config => {
@@ -69,5 +61,14 @@ module.exports = override(
     libraryDirectory: 'es',
     style: true,
   }),
+  addBabelPlugins('styled-components', [
+    'tailwind-components',
+    {
+      config: './src/tailwind.config.js',
+      format: 'auto',
+    },
+    'react-hot-loader/babel',
+  ]),
+  useEslintRc(),
   // config => rewireReactHotLoader(config),
 );
