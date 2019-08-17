@@ -11,7 +11,7 @@
     "start:cra-ts": "npm run prepare && lerna run --parallel start --scope=@mono/ui --scope=@mono/cra-ts",
     "prepare": "rimraf ui/build && lerna run prepare",
     "build": "npm run prepare && lerna run --parallel build",
-    "storybook": "lerna run storybook --scope=@mono/storybook",
+    "storybook": "lerna run storybook --scope=@mono/storybook --stream",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
