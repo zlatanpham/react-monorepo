@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-// ${tw`bg-grey`};
-// import tw from 'tailwind.macro';
+import tw from 'tailwind.macro';
 
 const Container = styled.div`
+  ${tw`bg-grey hidden`};
   height: 200px;
   background-color: red;
 `;

@@ -37,6 +37,15 @@ module.exports = override(
     javascriptEnabled: true,
     modifyVars: themeVars,
   }),
+  addBabelPlugins('styled-components', [
+    'tailwind-components',
+    {
+      config: './src/tailwind.config.js',
+      format: 'auto',
+    },
+    'react-hot-loader/babel',
+  ]),
+  useEslintRc(),
   // allow babel config from cra to transform outsite source
   babelInclude([path.resolve('src'), path.resolve('../ui')]),
   addPostcssPlugins([
@@ -61,14 +70,5 @@ module.exports = override(
     libraryDirectory: 'es',
     style: true,
   }),
-  addBabelPlugins('styled-components', [
-    'tailwind-components',
-    {
-      config: './src/tailwind.config.js',
-      format: 'auto',
-    },
-    'react-hot-loader/babel',
-  ]),
-  useEslintRc(),
   // config => rewireReactHotLoader(config),
 );
