@@ -1,8 +1,13 @@
 import React from 'react';
+import { Button as AntdButton } from 'antd';
 
 export const Button: React.FunctionComponent<any> = ({
   children,
   className,
 }) => {
-  return <button className={className + ' test hello'}>{children}</button>;
+  return (
+    <AntdButton type="primary" className={className}>
+      {children}
+    </AntdButton>
+  );
 };

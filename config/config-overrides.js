@@ -1,14 +1,22 @@
 const rewireReactHotLoader = require('react-app-rewire-hot-loader');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const {
+  addLessLoader,
   addWebpackResolve,
   addBabelPlugins,
   override,
   addPostcssPlugins,
   babelInclude,
   useEslintRc,
+  fixBabelImports,
 } = require('customize-cra');
+
+const fs = require('fs');
 const path = require('path');
+const lessToJs = require('less-vars-to-js');
+const themeVars = lessToJs(
+  fs.readFileSync(path.join(__dirname, 'antTheme.less'), 'utf8'),
+);
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   // Specify the paths to all of the template files in your project
@@ -19,15 +27,19 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 });
 
 module.exports = override(
-  addWebpackResolve({
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
+  // addWebpackResolve({
+  //   alias: {
+  //     'react-dom': '@hot-loader/react-dom',
+  //   },
+  // }),
+  addLessLoader({
+    javascriptEnabled: true,
+    modifyVars: themeVars,
   }),
   addBabelPlugins('styled-components', [
     'tailwind-components',
     {
-      config: './src/tailwind.config.js',
+      config: path.join(__dirname, 'tailwind.config.js'),
       format: 'auto',
     },
     'react-hot-loader/babel',
@@ -36,7 +48,7 @@ module.exports = override(
   // allow babel config from cra to transform outsite source
   babelInclude([path.resolve('src'), path.resolve('../ui')]),
   addPostcssPlugins([
-    require('tailwindcss')(path.resolve('../config/tailwind.config.js')),
+    require('tailwindcss')(path.join(__dirname, 'tailwind.config.js')),
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
   ]),
   config => {
@@ -52,5 +64,10 @@ module.exports = override(
     }
     return config;
   },
-  config => rewireReactHotLoader(config),
+  fixBabelImports('antd', {
+    libraryName: 'antd',
+    libraryDirectory: 'es',
+    style: true,
+  }),
+  // config => rewireReactHotLoader(config),
 );
