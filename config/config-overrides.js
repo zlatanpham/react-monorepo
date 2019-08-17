@@ -5,6 +5,7 @@ const {
   addBabelPlugins,
   override,
   addPostcssPlugins,
+  babelInclude,
   useEslintRc,
 } = require('customize-cra');
 const path = require('path');
@@ -32,6 +33,8 @@ module.exports = override(
     'react-hot-loader/babel',
   ]),
   useEslintRc(),
+  // allow babel config from cra to transform outsite source
+  babelInclude([path.resolve('src'), path.resolve('../ui')]),
   addPostcssPlugins([
     require('tailwindcss')(path.resolve('../config/tailwind.config.js')),
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),

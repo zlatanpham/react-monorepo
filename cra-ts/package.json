@@ -4,6 +4,7 @@
   "private": true,
   "author": "Zlatan Pham <zlatan.pham@gmail.com> (https://github.com/zlatanpham)",
   "dependencies": {
+    "@mono/ui": "^1.0.0",
     "@reach/router": "^1.2.1",
     "axios": "^0.19.0",
     "connected-react-router": "^6.5.2",

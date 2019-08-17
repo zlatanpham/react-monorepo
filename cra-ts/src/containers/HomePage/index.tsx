@@ -15,6 +15,7 @@ import { Dispatch } from 'redux';
 import { HomeState } from './types';
 import { ApplicationRootState } from 'types/app';
 import { Link } from '@reach/router';
+import { Line } from '@mono/ui';
 
 const mapStateToProps = createStructuredSelector<
   ApplicationRootState,
@@ -58,6 +59,7 @@ const Home = () => {
           key={post.id}
           className="-mx-2 flex border-b border-solid px-2 py-2"
         >
+          <Line thickness="thick" />
           <div className="w-16 px-2">{post.id}</div>
           <div className="w-2/3 px-2">{post.title}</div>
           <div className="w-1/3 px-2 text-right">

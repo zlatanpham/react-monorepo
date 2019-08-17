@@ -8,9 +8,9 @@
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
     "start": "lerna run --parallel start",
+    "start:cra-ts": "npm run prepare && lerna run --parallel start --scope=@mono/ui --scope=@mono/cra-ts",
     "prepare": "rimraf ui/build && lerna run prepare",
     "build": "npm run prepare && lerna run --parallel build",
-    "start:cra-ts": "npm run prepare && lerna run --parallel start --scope=@mono/ui --scope=@mono/cra-ts",
     "storybook": "lerna run storybook --scope=@mono/storybook",
     "build-storybook": "build-storybook"
   },
