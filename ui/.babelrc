@@ -1,4 +1,5 @@
 {
-  "presets": ["@babel/typescript"],
-  "plugins": ["macros"]
+  "presets": ["@babel/preset-react", "@babel/typescript", "@babel/preset-env"],
+  "plugins": ["styled-components", "macros"],
+  "ignore": ["**/*.stories.js"]
 }

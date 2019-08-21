@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const Container = styled.div`
-  ${tw`bg-grey hidden`};
+  ${tw`hidden`};
   height: 200px;
   background-color: red;
 `;
@@ -15,7 +15,7 @@ interface LineProps {
 
 export const Line: React.FunctionComponent<LineProps> = ({ thickness }) => {
   const weight: { [k in LineThickness]: number } = {
-    base: 400,
+    base: 300,
     thick: 900,
     thin: 500,
   };
