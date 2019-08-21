@@ -25,7 +25,7 @@
     "typesafe-actions": "^4.4.2"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "SKIP_PREFLIGHT_CHECK=true react-app-rewired start",
     "build": "react-app-rewired build",
     "build:analyze": "react-app-rewired build && webpack-bundle-analyzer --port 4200 build/stats.json",
     "test": "react-app-rewired test",

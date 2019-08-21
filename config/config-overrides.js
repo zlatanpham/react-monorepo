@@ -18,14 +18,6 @@ const themeVars = lessToJs(
   fs.readFileSync(path.join(__dirname, 'antTheme.less'), 'utf8'),
 );
 
-const purgecss = require('@fullhuman/postcss-purgecss')({
-  // Specify the paths to all of the template files in your project
-  content: ['./src/**/*.html', './src/**/*.js'],
-  // Include any special characters you're using in this regular expression
-  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-  whitelist: ['html', 'body'],
-});
-
 module.exports = override(
   // addWebpackResolve({
   //   alias: {
@@ -48,10 +40,7 @@ module.exports = override(
   useEslintRc(),
   // allow babel config from cra to transform outsite source
   babelInclude([path.resolve('src'), path.resolve('../ui')]),
-  addPostcssPlugins([
-    require('tailwindcss')('./src/tailwind.config.js'),
-    ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
-  ]),
+  addPostcssPlugins([require('tailwindcss')('./src/tailwind.config.js')]),
   config => {
     if (process.env.NODE_ENV === 'production') {
       config.plugins = (config.plugins || []).concat([
