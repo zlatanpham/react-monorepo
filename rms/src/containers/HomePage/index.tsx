@@ -15,7 +15,7 @@ import { Dispatch } from 'redux';
 import { HomeState } from './types';
 import { ApplicationRootState } from 'types/app';
 import { Link } from '@reach/router';
-import { Line, Button } from '@mono/ui';
+import { Line, Button } from '@aha/ui';
 
 const mapStateToProps = createStructuredSelector<
   ApplicationRootState,

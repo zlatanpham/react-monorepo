@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@mono/ui/*": ["./mono/ui/src"]
+      "@aha/ui/*": ["./aha/ui/src"]
     }
   }
 }

@@ -16,7 +16,7 @@ import { PostState } from './types';
 import { ApplicationRootState } from 'types/app';
 import { RouteComponentProps } from '@reach/router';
 import Button from 'components/Button';
-import { Line } from '@mono/ui';
+import { Line } from '@aha/ui';
 
 const mapStateToProps = createStructuredSelector<
   ApplicationRootState,
